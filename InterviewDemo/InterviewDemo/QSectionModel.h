@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Jastor.h"
 
-@interface QSectionModel : NSObject
+@interface QSectionModel : Jastor
 
 @property (copy,nonatomic) NSString *SectionName;
 @property (strong,nonatomic) NSMutableArray *Content;

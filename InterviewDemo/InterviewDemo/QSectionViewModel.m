@@ -29,7 +29,7 @@ static NSString *const kCellIdentifier=@"sectionCell";
         model2.SectionName=@"Part Two";
         model2.Content=[NSMutableArray array];
         [model2.Content addObjectsFromArray:@[@"2Developing the user interface of a professional software application is not easy.",@"123121231233123"]];
-        
+    
         [self.Sections addObjectsFromArray:@[model1,model2]];
     }
     return self;
@@ -76,6 +76,13 @@ static NSString *const kCellIdentifier=@"sectionCell";
     
     QSectionModel *destinationSectionModel=self.Sections[destinationIndexPath.section];
     [destinationSectionModel.Content insertObject:sourceContent atIndex:destinationIndexPath.row];
+}
+
+#pragma mark -
+#pragma mark Private Methods
+
+-(void)p_GetJsonContent{
+    
 }
 
 @end

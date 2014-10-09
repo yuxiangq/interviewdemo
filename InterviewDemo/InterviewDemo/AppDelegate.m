@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "QMainViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window=[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    QMainViewController *mainViewController=[[QMainViewController alloc] init];
+    UINavigationController *navigationController=[[UINavigationController alloc] initWithRootViewController:mainViewController];
+    self.window.rootViewController=navigationController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

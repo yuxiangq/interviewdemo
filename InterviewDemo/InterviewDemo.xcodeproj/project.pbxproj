@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		8931EF3219E6D9840046A8DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8931EF3119E6D9840046A8DE /* main.m */; };
 		8931EF3519E6D9840046A8DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8931EF3419E6D9840046A8DE /* AppDelegate.m */; };
-		8931EF3819E6D9840046A8DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8931EF3719E6D9840046A8DE /* ViewController.m */; };
-		8931EF3B19E6D9840046A8DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8931EF3919E6D9840046A8DE /* Main.storyboard */; };
 		8931EF3D19E6D9840046A8DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8931EF3C19E6D9840046A8DE /* Images.xcassets */; };
 		8931EF4019E6D9840046A8DE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8931EF3E19E6D9840046A8DE /* LaunchScreen.xib */; };
 		8931EF4C19E6D9840046A8DE /* InterviewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8931EF4B19E6D9840046A8DE /* InterviewDemoTests.m */; };
+		8931EF5719E6DAE60046A8DE /* QMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8931EF5619E6DAE60046A8DE /* QMainViewController.m */; };
+		8931EF5D19E6E1690046A8DE /* QSectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8931EF5C19E6E1690046A8DE /* QSectionViewModel.m */; };
+		8931EF6019E6E1830046A8DE /* QSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8931EF5F19E6E1830046A8DE /* QSectionModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +33,17 @@
 		8931EF3119E6D9840046A8DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8931EF3319E6D9840046A8DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8931EF3419E6D9840046A8DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8931EF3619E6D9840046A8DE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8931EF3719E6D9840046A8DE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		8931EF3A19E6D9840046A8DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8931EF3C19E6D9840046A8DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8931EF3F19E6D9840046A8DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8931EF4519E6D9840046A8DE /* InterviewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterviewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8931EF4A19E6D9840046A8DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8931EF4B19E6D9840046A8DE /* InterviewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterviewDemoTests.m; sourceTree = "<group>"; };
+		8931EF5519E6DAE60046A8DE /* QMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMainViewController.h; sourceTree = "<group>"; };
+		8931EF5619E6DAE60046A8DE /* QMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMainViewController.m; sourceTree = "<group>"; };
+		8931EF5B19E6E1690046A8DE /* QSectionViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSectionViewModel.h; sourceTree = "<group>"; };
+		8931EF5C19E6E1690046A8DE /* QSectionViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSectionViewModel.m; sourceTree = "<group>"; };
+		8931EF5E19E6E1830046A8DE /* QSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QSectionModel.h; sourceTree = "<group>"; };
+		8931EF5F19E6E1830046A8DE /* QSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QSectionModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +85,11 @@
 		8931EF2E19E6D9840046A8DE /* InterviewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8931EF5A19E6E14B0046A8DE /* ViewModels */,
+				8931EF5919E6E13E0046A8DE /* Models */,
+				8931EF5819E6E1210046A8DE /* Views */,
 				8931EF3319E6D9840046A8DE /* AppDelegate.h */,
 				8931EF3419E6D9840046A8DE /* AppDelegate.m */,
-				8931EF3619E6D9840046A8DE /* ViewController.h */,
-				8931EF3719E6D9840046A8DE /* ViewController.m */,
-				8931EF3919E6D9840046A8DE /* Main.storyboard */,
 				8931EF3C19E6D9840046A8DE /* Images.xcassets */,
 				8931EF3E19E6D9840046A8DE /* LaunchScreen.xib */,
 				8931EF2F19E6D9840046A8DE /* Supporting Files */,
@@ -117,6 +121,33 @@
 				8931EF4A19E6D9840046A8DE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8931EF5819E6E1210046A8DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8931EF5519E6DAE60046A8DE /* QMainViewController.h */,
+				8931EF5619E6DAE60046A8DE /* QMainViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		8931EF5919E6E13E0046A8DE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8931EF5E19E6E1830046A8DE /* QSectionModel.h */,
+				8931EF5F19E6E1830046A8DE /* QSectionModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		8931EF5A19E6E14B0046A8DE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8931EF5B19E6E1690046A8DE /* QSectionViewModel.h */,
+				8931EF5C19E6E1690046A8DE /* QSectionViewModel.m */,
+			);
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +230,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8931EF3B19E6D9840046A8DE /* Main.storyboard in Resources */,
 				8931EF4019E6D9840046A8DE /* LaunchScreen.xib in Resources */,
 				8931EF3D19E6D9840046A8DE /* Images.xcassets in Resources */,
 			);
@@ -219,8 +249,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8931EF3819E6D9840046A8DE /* ViewController.m in Sources */,
+				8931EF6019E6E1830046A8DE /* QSectionModel.m in Sources */,
+				8931EF5719E6DAE60046A8DE /* QMainViewController.m in Sources */,
 				8931EF3519E6D9840046A8DE /* AppDelegate.m in Sources */,
+				8931EF5D19E6E1690046A8DE /* QSectionViewModel.m in Sources */,
 				8931EF3219E6D9840046A8DE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,14 +276,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8931EF3919E6D9840046A8DE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8931EF3A19E6D9840046A8DE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8931EF3E19E6D9840046A8DE /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

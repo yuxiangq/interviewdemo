@@ -21,6 +21,7 @@
 #pragma mark View Methods
 -(void)viewDidLoad{
     [super viewDidLoad];
+    
     self.title=@"InterView Demo";
     [self initNavigationItems];
     [self initUITableView];
@@ -35,6 +36,13 @@
 -(void)initUITableView{
     self.sectionViewModel=[[QSectionViewModel alloc] init];
     self.tableView.dataSource=self.sectionViewModel;
+    [self.sectionViewModel addObserver:self forKeyPath:@"Sections" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if ([keyPath isEqualToString:@"Sections"]) {
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark -

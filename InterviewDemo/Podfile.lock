@@ -21,13 +21,16 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - jastor (0.2.1)
+  - JSONKit (1.5pre)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - jastor (~> 0.2.1)
+  - JSONKit (~> 1.5pre)
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   jastor: 38c8cd3670b362123d824ee48a3056dca2037857
+  JSONKit: efef3bbd3372ff33f96b9c6f34cf4fe18e74ab69
 
 COCOAPODS: 0.33.1

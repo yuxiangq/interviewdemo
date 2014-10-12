@@ -7,7 +7,12 @@
 //
 
 #import "QSectionModel.h"
+#import "QContentModel.h"
 
 @implementation QSectionModel
+
++(Class)Content_class{
+    return [QContentModel class];
+}
 
 @end

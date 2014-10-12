@@ -8,6 +8,9 @@
 
 #import "QSectionViewModel.h"
 #import "QSectionModel.h"
+#import "AFNetworking.h"
+#import "JSONKit.h"
+#import "QModel.h"
 
 static NSString *const kCellIdentifier=@"sectionCell";
 
@@ -20,17 +23,19 @@ static NSString *const kCellIdentifier=@"sectionCell";
     if (self=[super init]) {
         self.Sections=[NSMutableArray array];
         
-        QSectionModel *model1=[[QSectionModel alloc] init];
-        model1.Content=[NSMutableArray array];
-        model1.SectionName=@"Part One";
-        [model1.Content addObjectsFromArray:@[@"Developing the user interface of a professional software application is not easy.",@"123123123",@"ff",@"asdfsadfsf"]];
+//        QSectionModel *model1=[[QSectionModel alloc] init];
+//        model1.Content=[NSMutableArray array];
+//        model1.SectionName=@"Part One";
+//        [model1.Content addObjectsFromArray:@[@"Developing the user interface of a professional software application is not easy.",@"123123123",@"ff",@"asdfsadfsf"]];
+//        
+//        QSectionModel *model2=[[QSectionModel alloc] init];
+//        model2.SectionName=@"Part Two";
+//        model2.Content=[NSMutableArray array];
+//        [model2.Content addObjectsFromArray:@[@"2Developing the user interface of a professional software application is not easy.",@"123121231233123"]];
+//    
+//        [self.Sections addObjectsFromArray:@[model1,model2]];
         
-        QSectionModel *model2=[[QSectionModel alloc] init];
-        model2.SectionName=@"Part Two";
-        model2.Content=[NSMutableArray array];
-        [model2.Content addObjectsFromArray:@[@"2Developing the user interface of a professional software application is not easy.",@"123121231233123"]];
-    
-        [self.Sections addObjectsFromArray:@[model1,model2]];
+        [self p_GetJsonContent];
     }
     return self;
 }
@@ -58,7 +63,7 @@ static NSString *const kCellIdentifier=@"sectionCell";
         cell.textLabel.numberOfLines=0;
     }
     QSectionModel *sectionModel=self.Sections[indexPath.section];
-    cell.textLabel.text=sectionModel.Content[indexPath.row];
+    cell.textLabel.text=[sectionModel.Content[indexPath.row] text];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -82,7 +87,24 @@ static NSString *const kCellIdentifier=@"sectionCell";
 #pragma mark Private Methods
 
 -(void)p_GetJsonContent{
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
+    NSURL *URL = [NSURL URLWithString:@"https://raw.githubusercontent.com/lovekarri/exercise/master/content.json"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            NSString *content=[NSString stringWithContentsOfURL:filePath encoding:NSUTF8StringEncoding error:nil];
+            QModel *model=[QModel objectFromDictionary:[content objectFromJSONString]];
+            self.Sections=model.Section;
+        }];
+    }];
+    [downloadTask resume];
+
 }
 
 @end
